@@ -105,4 +105,6 @@ dependencies {
 
     //Pager
   //  implementation("com.google.accompanist:accompanist-pager:0.12.0")
+    //Splash Screen
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
