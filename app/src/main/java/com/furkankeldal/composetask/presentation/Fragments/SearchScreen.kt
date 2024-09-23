@@ -28,6 +28,7 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -35,6 +36,7 @@ import androidx.navigation.NavController
 import com.furkankeldal.composetask.presentation.Fragments.views.movieListRow
 import com.furkankeldal.composetask.presentation.movies.moviesEvent
 import com.furkankeldal.composetask.presentation.movies.moviesViewModel
+import com.furkankeldal.composetask.ui.theme.ComposeTaskTheme
 
 
 @Composable
@@ -59,6 +61,7 @@ fun SearchScreen(
         Column() {
             MovieSearchBar(modifier = Modifier
                 .fillMaxWidth()
+                .background(Color.Black)
                 .padding(20.dp),
                 hint = "superman",
                 onSearch = {
@@ -94,8 +97,6 @@ fun SearchScreen(
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
     }
-
-
 }
 
 @Composable
@@ -129,7 +130,7 @@ fun MovieSearchBar(
                 .fillMaxWidth()
                 .shadow(6.dp, CircleShape)
                 .background(Color.White, CircleShape)
-                .padding(horizontal = 20.dp)
+
                 .onFocusChanged {
                     isHintDisplayed = it.isFocused != true && text.isEmpty()
                 }
